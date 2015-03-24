@@ -19,3 +19,6 @@ any of these, try selecting a file in the project, and then running Tools > Pub 
 local machine.
 2. Go to http://localhost:8080/serverStatus to test that your server is returning data. See `server.dart`
 for other routes.
+
+##Build Status##
+[ ![Codeship Status for Mixolyde/dartless_server](https://codeship.com/projects/b7c9d290-b46e-0132-a073-4e3657f9ca7f/status?branch=master)](https://codeship.com/projects/70470)
