@@ -63,8 +63,8 @@ Plan for routes to be implemented:
 
 Development Tools
 -----------------
-* [Dart](https://dartlang.org) Dart programming language, SDK, and IDE
-* [Redstone](https://redstonedart.org) Dart package for doing RESTful web server routes
+* [Dart](https://www.dartlang.org) Dart programming language, SDK, and IDE from Google
+* [Redstone](http://redstonedart.org) Dart package for doing RESTful web server routes
 * [Github](https://github.com/Mixolyde/dartless_server) GIT version control repository
 * [Postman](http://www.getpostman.com/) Easy and powerful REST API testing toolkit
 * [Codeship](https://codeship.com) Easy automated build and deployment service
