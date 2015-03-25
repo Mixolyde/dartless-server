@@ -24,7 +24,20 @@ class Weapon_Card extends Card {
 List<Card> newDeck(){
   List<Card> cards = [];
   List<Room> rooms = Room.values;
+  List<Weapon> weapons = Weapon.values;
+  List<Character> chars = Character.values;
   
+  for(var room in rooms){
+    cards.add(new Room_Card(room));
+  }
+  
+  for(var weapon in weapons){
+    cards.add(new Weapon_Card(weapon));
+  }
+  
+  for(var char in chars){
+    cards.add(new Character_Card(char));
+  }
   
   return cards;
 }
