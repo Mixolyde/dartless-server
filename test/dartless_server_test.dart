@@ -34,5 +34,16 @@ void serverTests() {
         expect(content, containsPair("running", true));
       });
     });
+    test('GET index', () {
+      //create a mock request
+      var req = new MockRequest("/");
+      //dispatch the request
+      return app.dispatch(req).then((resp) {
+        //verify the response
+        expect(resp.statusCode, equals(200));
+        var content = JSON.decode(resp.mockContent);
+        expect(content, "Welcome to the dartless server!");
+      });
+    });
   });
 }

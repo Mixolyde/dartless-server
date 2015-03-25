@@ -1,10 +1,19 @@
-// Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
 /// The dartless_server library.
 library dartless_server;
 
 import 'package:redstone/server.dart' as app;
+
+//route resource parts
+part 'resources/game_resources.dart';
+part 'resources/move_resources.dart';
+
+//game logic parts
+part 'gamelogic/board.dart';
+part 'gamelogic/card.dart';
+part 'gamelogic/game_data.dart';
+
+@app.Route("/")
+helloWorld() => "Welcome to the dartless server!";
 
 @app.Route('/serverStatus')
 Map getServerStatus()

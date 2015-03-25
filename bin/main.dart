@@ -4,9 +4,6 @@
 import 'package:dartless_server/dartless_server.dart' as dartless_server;
 import 'package:redstone/server.dart' as app;
 
-@app.Route("/")
-helloWorld() => "Hello, World!";
-
 main() {
   app.setupConsoleLog();
   app.start();

@@ -20,5 +20,18 @@ local machine.
 2. Go to http://localhost:8080/serverStatus to test that your server is returning data. See `server.dart`
 for other routes.
 
+##Routes##
+Plan for routes to be implemented:
+
+    GET     /                     # Index page, welcome message
+    GET     /games                # Get a list of games in progress
+    POST    /games
+    GET     /games/:id
+    DELETE  /games/:id
+    PUT     /games/:id/player
+    PUT     /games/:id/start
+    GET     /games/:id/move
+    PUT     /games/:id/move
+
 ##Build Status##
 [ ![Codeship Status for Mixolyde/dartless_server](https://codeship.com/projects/b7c9d290-b46e-0132-a073-4e3657f9ca7f/status?branch=master)](https://codeship.com/projects/70470)
