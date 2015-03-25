@@ -1,25 +1,25 @@
 part of dartless_server;
 
-enum Character {SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM}
-enum Room {HALL, STUDY, LIBRARY, CONSERVATORY, BALL_ROOM,
+enum Character_Enum {SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM}
+enum Room_Enum {HALL, STUDY, LIBRARY, CONSERVATORY, BALL_ROOM,
   BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN}
-enum Weapon {KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON }
+enum Weapon_Enum {KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON }
 
 abstract class Card {}
 
-class Character_Card extends Card {
-  Character character;
-  Character_Card(this.character);
+class Character extends Card {
+  Character_Enum character;
+  Character(this.character);
 }
 
-class Room_Card extends Card {
-  Room room;
-  Room_Card(this.room);
+class Room extends Card {
+  Room_Enum room;
+  Room(this.room);
 }
 
-class Weapon_Card extends Card {
-  Weapon weapon;
-  Weapon_Card(this.weapon);
+class Weapon extends Card {
+  Weapon_Enum weapon;
+  Weapon(this.weapon);
 }
 
 class WinningCards{
@@ -29,21 +29,28 @@ class WinningCards{
 
 List<Card> newDeck(){
   List<Card> cards = [];
-  List<Room> rooms = Room.values;
-  List<Weapon> weapons = Weapon.values;
-  List<Character> chars = Character.values;
-  
-  for(var room in rooms){
-    cards.add(new Room_Card(room));
+
+  for(var room in Room_Enum.values){
+    cards.add(new Room(room));
   }
   
-  for(var weapon in weapons){
-    cards.add(new Weapon_Card(weapon));
+  for(var weapon in Weapon_Enum.values){
+    cards.add(new Weapon(weapon));
   }
   
-  for(var char in chars){
-    cards.add(new Character_Card(char));
+  for(var char in Character_Enum.values){
+    cards.add(new Character(char));
   }
+  
+  return cards;
+}
+
+List<Card> gameDeck(WinningCards winners){
+  List<Card> cards;
+  
+  cards.removeAt(cards.indexOf(winners.room));
+  cards.removeAt(cards.indexOf(winners.weapon));
+  cards.removeAt(cards.indexOf(winners.character));
   
   return cards;
 }
