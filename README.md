@@ -20,18 +20,57 @@ local machine.
 2. Go to http://localhost:8080/serverStatus to test that your server is returning data. See `server.dart`
 for other routes.
 
-##Routes##
+
+Project Status
+--------------
+
+### Completed
+
+* Grabbed dart server template and setup in github
+* Started game logic enums for cards
+
+### Todo
+
+* Lots of unit tests
+* Game Logic (game data, players, move logic)
+* Multiple simultaneous games allowed
+* Move/game history log which stores/logs all moves played
+* Server game state CRUD via messages
+* Send game data as JSON object
+* Receive player info and start game
+* Receive move submissions
+* Update state on move submission
+* Possibly send out a "game over" message directly to clients
+* Index web page with instructions and link to client
+* Web GUI client
+* AI players
+* Watch AI-only game
+* Auto-refreshing game viewer
+* More codeship settings for deploying the server and running application tests
+
+### Routes
 Plan for routes to be implemented:
 
     GET     /                     # Index page, welcome message
     GET     /games                # Get a list of games in progress
-    POST    /games
-    GET     /games/:id
-    DELETE  /games/:id
-    PUT     /games/:id/player
-    PUT     /games/:id/start
-    GET     /games/:id/move
-    PUT     /games/:id/move
+    POST    /games                # Post a new game request
+    GET     /games/:id            # Get data for a game
+    DELETE  /games/:id            # End a game
+    PUT     /games/:id/player     # Add a player to a game
+    PUT     /games/:id/start      # Start a game if enough players
+    GET     /games/:id/move       # Get allowable moves
+    PUT     /games/:id/move       # Send a move
+
+Development Tools
+-----------------
+* [Dart](https://dartlang.org) Dart programming language, SDK, and IDE
+* [Redstone](https://redstonedart.org) Dart package for doing RESTFUL web server routes
+* [Github](https://github.com/Mixolyde/dartless_server) GIT version control repository
+* [Postman](http://www.getpostman.com/) Easy and powerful REST API testing toolkit
+* [Codeship](https://codeship.com) Easy automated build and deployment service
+
+Continuous Integration
+----------------------
 
 ##Build Status##
 [ ![Codeship Status for Mixolyde/dartless_server](https://codeship.com/projects/b7c9d290-b46e-0132-a073-4e3657f9ca7f/status?branch=master)](https://codeship.com/projects/70470)
