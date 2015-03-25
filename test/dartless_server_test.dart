@@ -41,8 +41,8 @@ void serverTests() {
       return app.dispatch(req).then((resp) {
         //verify the response
         expect(resp.statusCode, equals(200));
-        var content = JSON.decode(resp.mockContent);
-        expect(content, "Welcome to the dartless server!");
+        var content = resp.mockContent;
+        expect(content, equals("Welcome to the dartless server!"));
       });
     });
   });
