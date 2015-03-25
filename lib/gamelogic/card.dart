@@ -1,8 +1,9 @@
 part of dartless_server;
 
 enum Character {SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM}
-enum Room {HALL, KITCHEN}
-enum Weapon {KNIFE}
+enum Room {HALL, STUDY, LIBRARY, CONSERVATORY, BALL_ROOM,
+  BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN}
+enum Weapon {KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON }
 
 abstract class Card {}
 
