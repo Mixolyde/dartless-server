@@ -8,11 +8,6 @@ class GameData {
   GameData(this.players, this.moveState);
 }
 
-var players: Map[Character, PlayerData] = Map()
-var winner: Option[String] = None
-var moveState: Option[MoveState] = None
-
-
 case class PlayerData {
   final String name;
   final Set<Card> hand;
