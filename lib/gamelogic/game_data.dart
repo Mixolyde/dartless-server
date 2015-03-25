@@ -8,7 +8,7 @@ class GameData {
   GameData(this.players, this.moveState);
 }
 
-case class PlayerData {
+class PlayerData {
   final String name;
   final Set<Card> hand;
   
