@@ -22,6 +22,11 @@ class Weapon_Card extends Card {
   Weapon_Card(this.weapon);
 }
 
+class WinningCards{
+  Room room; Weapon weapon; Character character;
+  WinningCards(this.room, this.weapon, this.character);
+}
+
 List<Card> newDeck(){
   List<Card> cards = [];
   List<Room> rooms = Room.values;
