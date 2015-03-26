@@ -5,24 +5,23 @@ abstract class Card {
   const Card();
 }
 
-enum Character_Enum {SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM}
 class Character extends Card {
-  final Character_Enum character;
+  final String character; 
   
   const Character._(this.character);
   
   static final Character SCARLET =
-      const Character._(Character_Enum.SCARLET);
+      const Character._("SCARLET");
   static final Character MUSTARD =
-      const Character._(Character_Enum.MUSTARD);
+      const Character._("MUSTARD");
   static final Character WHITE =
-      const Character._(Character_Enum.WHITE);
+      const Character._("WHITE");
   static final Character GREEN =
-      const Character._(Character_Enum.GREEN);
+      const Character._("GREEN");
   static final Character PEACOCK =
-      const Character._(Character_Enum.PEACOCK);
+      const Character._("PEACOCK");
   static final Character PLUM =
-      const Character._(Character_Enum.PLUM);  
+      const Character._("PLUM");  
 }
 
 enum Room_Enum {HALL, STUDY, LIBRARY, CONSERVATORY, BALLROOM, BILLIARDROOM, LOUNGE, DININGROOM, KITCHEN}
@@ -79,6 +78,13 @@ class WinningCards{
 List<Card> newDeck(){
   List<Card> cards = [];
 
+  cards.add(Character.SCARLET);
+  cards.add(Character.MUSTARD);
+  cards.add(Character.WHITE);
+  cards.add(Character.GREEN);
+  cards.add(Character.PEACOCK);
+  cards.add(Character.PLUM);
+    
   cards.add(Room.BALLROOM);
   cards.add(Room.BILLIARDROOM);
   cards.add(Room.CONSERVATORY);
@@ -96,13 +102,6 @@ List<Card> newDeck(){
   cards.add(Weapon.POISON);
   cards.add(Weapon.ROPE);
   
-  cards.add(Character.SCARLET);
-  cards.add(Character.MUSTARD);
-  cards.add(Character.WHITE);
-  cards.add(Character.GREEN);
-  cards.add(Character.PEACOCK);
-  cards.add(Character.PLUM);
-    
   return cards;
 }
 
