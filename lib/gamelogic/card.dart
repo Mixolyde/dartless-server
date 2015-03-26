@@ -104,7 +104,7 @@ List<Card> newDeck(){
 }
 
 List<Card> gameDeck(WinningCards winners){
-  List<Card> cards;
+  List<Card> cards = newDeck();
   
   cards.removeAt(cards.indexOf(winners.room));
   cards.removeAt(cards.indexOf(winners.weapon));
