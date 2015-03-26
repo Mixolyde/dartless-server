@@ -1,0 +1,1 @@
+library move_resources_test;

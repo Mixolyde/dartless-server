@@ -4,7 +4,9 @@
 library all_tests;
 
 import 'dartless_server_test.dart' as dartless_server_test;
+import 'gamelogic/card_test.dart' as card_test;
 
 void main() {
   dartless_server_test.main();
+  card_test.main();
 }
