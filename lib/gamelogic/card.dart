@@ -24,48 +24,46 @@ class Character extends Card {
       const Character._("PLUM");  
 }
 
-enum Room_Enum {HALL, STUDY, LIBRARY, CONSERVATORY, BALLROOM, BILLIARDROOM, LOUNGE, DININGROOM, KITCHEN}
 class Room extends Card {
-  final Room_Enum room;
+  final String room;
   
-  const Room._(Room_Enum this.room);
+  const Room._(this.room);
   
   static final Room HALL =
-      const Room._(Room_Enum.HALL);
+      const Room._("HALL");
   static final Room STUDY =
-      const Room._(Room_Enum.STUDY);
+      const Room._("STUDY");
   static final Room LIBRARY =
-      const Room._(Room_Enum.LIBRARY);
+      const Room._("LIBRARY");
   static final Room CONSERVATORY =
-      const Room._(Room_Enum.CONSERVATORY);
+      const Room._("CONSERVATORY");
   static final Room BALLROOM =
-      const Room._(Room_Enum.BALLROOM);
+      const Room._("BALLROOM");
   static final Room BILLIARDROOM =
-      const Room._(Room_Enum.BILLIARDROOM);
+      const Room._("BILLIARDROOM");
   static final Room LOUNGE =
-      const Room._(Room_Enum.LOUNGE);
+      const Room._("LOUNGE");
   static final Room DININGROOM =
-      const Room._(Room_Enum.DININGROOM);
+      const Room._("DININGROOM");
   static final Room KITCHEN =
-      const Room._(Room_Enum.KITCHEN);
+      const Room._("KITCHEN");
 }
 
-enum Weapon_Enum {KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON }
 class Weapon extends Card {
-  final Weapon_Enum weapon;
+  final String weapon;
   const Weapon._(this.weapon);
   static final Weapon KNIFE =
-      const Weapon._(Weapon_Enum.KNIFE);
+      const Weapon._("KNIFE");
   static final Weapon CANDLESTICK =
-      const Weapon._(Weapon_Enum.CANDLESTICK);
+      const Weapon._("CANDLESTICK");
   static final Weapon PIPE =
-      const Weapon._(Weapon_Enum.PIPE);
+      const Weapon._("PIPE");
   static final Weapon PISTOL =
-      const Weapon._(Weapon_Enum.PISTOL);
+      const Weapon._("PISTOL");
   static final Weapon ROPE =
-      const Weapon._(Weapon_Enum.ROPE);
+      const Weapon._("ROPE");
   static final Weapon POISON =
-      const Weapon._(Weapon_Enum.POISON);
+      const Weapon._("POISON");
 }
 
 class WinningCards{
