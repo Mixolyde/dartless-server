@@ -8,6 +8,7 @@ abstract class Card {
 
 class Character extends Card {
   const Character._(name):super(name);
+  const static final List<Character> all = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
   
   static final Character SCARLET =
       const Character._("SCARLET");
@@ -25,6 +26,8 @@ class Character extends Card {
 
 class Room extends Card {
   const Room._(name):super(name);
+  const static final List<rOOM> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
+  BALL_ROOM, BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN];
   
   static final Room HALL =
       const Room._("HALL");
@@ -34,20 +37,22 @@ class Room extends Card {
       const Room._("LIBRARY");
   static final Room CONSERVATORY =
       const Room._("CONSERVATORY");
-  static final Room BALLROOM =
-      const Room._("BALLROOM");
-  static final Room BILLIARDROOM =
-      const Room._("BILLIARDROOM");
+  static final Room BALL_ROOM =
+      const Room._("BALL_ROOM");
+  static final Room BILLIARD_ROOM =
+      const Room._("BILLIARD_ROOM");
   static final Room LOUNGE =
       const Room._("LOUNGE");
-  static final Room DININGROOM =
-      const Room._("DININGROOM");
+  static final Room DINING_ROOM =
+      const Room._("DINING_ROOM");
   static final Room KITCHEN =
       const Room._("KITCHEN");
 }
 
 class Weapon extends Card {
   const Weapon._(name):super(name);
+  const static final List<Weapon> all = [KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON];
+  
   static final Weapon KNIFE =
       const Weapon._("KNIFE");
   static final Weapon CANDLESTICK =
@@ -79,10 +84,10 @@ List<Card> newDeck(){
   cards.add(Character.PEACOCK);
   cards.add(Character.PLUM);
     
-  cards.add(Room.BALLROOM);
-  cards.add(Room.BILLIARDROOM);
+  cards.add(Room.BALL_ROOM);
+  cards.add(Room.BILLIARD_ROOM);
   cards.add(Room.CONSERVATORY);
-  cards.add(Room.DININGROOM);
+  cards.add(Room.DINING_ROOM);
   cards.add(Room.HALL);
   cards.add(Room.KITCHEN);
   cards.add(Room.LIBRARY);
@@ -105,6 +110,12 @@ List<Card> gameDeck(WinningCards winners){
   cards.removeAt(cards.indexOf(winners.room));
   cards.removeAt(cards.indexOf(winners.weapon));
   cards.removeAt(cards.indexOf(winners.character));
+
+  return shuffleDeck(shuffleDeck(shuffleDeck(cards)));
+}
+
+List<Card> shuffleDeck(List<Card> cards){
+  //TODO shuffle deck
   
   return cards;
 }
