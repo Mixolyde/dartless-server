@@ -42,6 +42,4 @@ class Passage{
   
 }
 
-static const List<Character> TURN_ORDER = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
-
 
