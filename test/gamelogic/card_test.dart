@@ -15,7 +15,7 @@ void main() {
       expect(testDeck, contains(Character.PLUM));
     });
     test('game deck has winning cards removed', () {
-      WinningCards winners = new WinningCards(Room.BALLROOM, 
+      WinningCards winners = new WinningCards(Room.BALL_ROOM, 
           Weapon.CANDLESTICK, Character.GREEN);
 
       List<Card> testDeck = gameDeck(winners);
@@ -24,7 +24,7 @@ void main() {
       expect(testDeck, contains(Room.HALL));
       expect(testDeck, contains(Weapon.POISON));
       expect(testDeck, contains(Character.PLUM));
-      expect(testDeck, isNot(contains(Room.BALLROOM)));
+      expect(testDeck, isNot(contains(Room.BALL_ROOM)));
       expect(testDeck, isNot(contains(Weapon.CANDLESTICK)));
       expect(testDeck, isNot(contains(Character.GREEN)));
     });
