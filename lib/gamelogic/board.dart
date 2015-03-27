@@ -62,4 +62,6 @@ abstract class Board {
     Character.PEACOCK : Hallway(Board_Room.LIBRARY, Board_Room.CONSERVATORY),
     Character.PLUM    : Hallway(Board_Room.STUDY, Board_Room.LIBRARY)
   };
+  
+  static Hallway getStart(Character char) => START_LOCATIONS[char];
 }
