@@ -61,5 +61,5 @@ abstract class Board {
     Character.GREEN   : Hallway(Board_Room.CONSERVATORY, Board_Room.BALL_ROOM),
     Character.PEACOCK : Hallway(Board_Room.LIBRARY, Board_Room.CONSERVATORY),
     Character.PLUM    : Hallway(Board_Room.STUDY, Board_Room.LIBRARY)
-  }
+  };
 }
