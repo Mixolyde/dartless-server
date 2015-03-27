@@ -24,7 +24,7 @@ class Character extends Card {
       const Character._("PLUM");  
 }
 
-class Room extends Card with BoardLocation {
+class Room extends Card {
   const Room._(name):super(name);
   static const List<Room> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
   BALL_ROOM, BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN];
