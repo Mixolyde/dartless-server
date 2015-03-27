@@ -7,7 +7,7 @@ abstract class BoardLocation {
 class Hallway extends BoardLocation {
   final Board_Room room1;
   final Board_Room room2;
-  Hallway(this.room1, this.room2);
+  const Hallway(this.room1, this.room2);
 }
 
 class Board_Room extends BoardLocation {
@@ -36,7 +36,7 @@ class Board_Room extends BoardLocation {
 class Passage{
   final Board_Room room1;
   final Board_Room room2;
-  Passage(this.room1, this.room2);
+  const Passage(this.room1, this.room2);
   
   
   
