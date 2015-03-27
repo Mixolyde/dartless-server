@@ -8,7 +8,7 @@ abstract class Card {
 
 class Character extends Card {
   const Character._(name):super(name);
-  const static List<Character> all = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
+  static const List<Character> all = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
   
   static final Character SCARLET =
       const Character._("SCARLET");
@@ -26,7 +26,7 @@ class Character extends Card {
 
 class Room extends Card {
   const Room._(name):super(name);
-  const static List<Room> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
+  static const List<Room> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
   BALL_ROOM, BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN];
   
   static final Room HALL =
@@ -51,7 +51,7 @@ class Room extends Card {
 
 class Weapon extends Card {
   const Weapon._(name):super(name);
-  const static List<Weapon> all = [KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON];
+  static const List<Weapon> all = [KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON];
   
   static final Weapon KNIFE =
       const Weapon._("KNIFE");
