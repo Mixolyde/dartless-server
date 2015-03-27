@@ -11,4 +11,6 @@ void main() {
   dartless_server_test.main();
   card_test.main();
   board_test.main();
+  
+  print("Tests Successful");
 }

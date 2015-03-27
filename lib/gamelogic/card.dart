@@ -8,62 +8,62 @@ abstract class Card {
 
 class Character extends Card {
   const Character._(name):super(name);
-  static const List<Character> all = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
+  static const List<Character> all = const [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
   
-  static final Character SCARLET =
+  static const Character SCARLET =
       const Character._("SCARLET");
-  static final Character MUSTARD =
+  static const Character MUSTARD =
       const Character._("MUSTARD");
-  static final Character WHITE =
+  static const Character WHITE =
       const Character._("WHITE");
-  static final Character GREEN =
+  static const Character GREEN =
       const Character._("GREEN");
-  static final Character PEACOCK =
+  static const Character PEACOCK =
       const Character._("PEACOCK");
-  static final Character PLUM =
+  static const Character PLUM =
       const Character._("PLUM");  
 }
 
 class Room extends Card {
   const Room._(name):super(name);
-  static const List<Room> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
+  static const List<Room> all = const [HALL, STUDY, LIBRARY, CONSERVATORY, 
   BALL_ROOM, BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN];
   
-  static final Room HALL =
+  static const Room HALL =
       const Room._("HALL");
-  static final Room STUDY =
+  static const Room STUDY =
       const Room._("STUDY");
-  static final Room LIBRARY =
+  static const Room LIBRARY =
       const Room._("LIBRARY");
-  static final Room CONSERVATORY =
+  static const Room CONSERVATORY =
       const Room._("CONSERVATORY");
-  static final Room BALL_ROOM =
+  static const Room BALL_ROOM =
       const Room._("BALL_ROOM");
-  static final Room BILLIARD_ROOM =
+  static const Room BILLIARD_ROOM =
       const Room._("BILLIARD_ROOM");
-  static final Room LOUNGE =
+  static const Room LOUNGE =
       const Room._("LOUNGE");
-  static final Room DINING_ROOM =
+  static const Room DINING_ROOM =
       const Room._("DINING_ROOM");
-  static final Room KITCHEN =
+  static const Room KITCHEN =
       const Room._("KITCHEN");
 }
 
 class Weapon extends Card {
   const Weapon._(name):super(name);
-  static const List<Weapon> all = [KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON];
+  static const List<Weapon> all = const [KNIFE, CANDLESTICK, PIPE, PISTOL, ROPE, POISON];
   
-  static final Weapon KNIFE =
+  static const Weapon KNIFE =
       const Weapon._("KNIFE");
-  static final Weapon CANDLESTICK =
+  static const Weapon CANDLESTICK =
       const Weapon._("CANDLESTICK");
-  static final Weapon PIPE =
+  static const Weapon PIPE =
       const Weapon._("PIPE");
-  static final Weapon PISTOL =
+  static const Weapon PISTOL =
       const Weapon._("PISTOL");
-  static final Weapon ROPE =
+  static const Weapon ROPE =
       const Weapon._("ROPE");
-  static final Weapon POISON =
+  static const Weapon POISON =
       const Weapon._("POISON");
 }
 
