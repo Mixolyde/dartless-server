@@ -26,7 +26,7 @@ class Character extends Card {
 
 class Room extends Card {
   const Room._(name):super(name);
-  const static final List<rOOM> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
+  const static final List<Room> all = [HALL, STUDY, LIBRARY, CONSERVATORY, 
   BALL_ROOM, BILLIARD_ROOM, LOUNGE, DINING_ROOM, KITCHEN];
   
   static final Room HALL =
