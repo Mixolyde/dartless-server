@@ -9,4 +9,5 @@ import 'gamelogic/card_test.dart' as card_test;
 void main() {
   dartless_server_test.main();
   card_test.main();
+  board_test.main();
 }
