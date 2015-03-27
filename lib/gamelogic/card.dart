@@ -2,13 +2,12 @@ part of dartless_server;
 
 
 abstract class Card {
+  final String name;
   const Card();
 }
 
 class Character extends Card {
-  final String character; 
-  
-  const Character._(this.character);
+  const Character._(this.name);
   
   static final Character SCARLET =
       const Character._("SCARLET");
@@ -25,9 +24,7 @@ class Character extends Card {
 }
 
 class Room extends Card {
-  final String room;
-  
-  const Room._(this.room);
+  const Room._(this.name);
   
   static final Room HALL =
       const Room._("HALL");
@@ -50,8 +47,7 @@ class Room extends Card {
 }
 
 class Weapon extends Card {
-  final String weapon;
-  const Weapon._(this.weapon);
+  const Weapon._(this.name);
   static final Weapon KNIFE =
       const Weapon._("KNIFE");
   static final Weapon CANDLESTICK =
