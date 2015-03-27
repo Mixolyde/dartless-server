@@ -45,13 +45,13 @@ class Passage{
 abstract class Board {
   static const List<Character> TURN_ORDER = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
   
-  static const Set<Passage> ALL_PASSAGES = new Set(
-    new Passage(Board_Room.STUDY, Board_Room.KITCHEN),
-    new Passage(Board_Room.CONSERVATORY, Board_Room.LOUNGE));
+  static const Set<Passage> ALL_PASSAGES = const Set(
+    const Passage(Board_Room.STUDY, Board_Room.KITCHEN),
+    const Passage(Board_Room.CONSERVATORY, Board_Room.LOUNGE));
     
-  static const Set<Passage> ALL_HALLWAYS = new Set(
-    new Hallway(Board_Room.STUDY, Board_Room.HALL),
-    new Hallway(Board_Room.HALL, Board_Room.LOUNGE));
+  static const Set<Passage> ALL_HALLWAYS = const Set(
+    const Hallway(Board_Room.STUDY, Board_Room.HALL),
+    const Hallway(Board_Room.HALL, Board_Room.LOUNGE));
     
   //starting locations
   static const Map<Character, Hallway> START_LOCATIONS = {
