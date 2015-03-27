@@ -54,7 +54,7 @@ abstract class Board {
     new Hallway(Board_Room.HALL, Board_Room.LOUNGE));
     
   //starting locations
-  static const  Map[Character, Hallway] START_LOCATIONS = {
+  static const Map<Character, Hallway> START_LOCATIONS = {
     Character.SCARLET : Hallway(Board_Room.HALL, Board_Room.LOUNGE),
     Character.MUSTARD : Hallway(Board_Room.LOUNGE, Board_Room.DINING_ROOM),
     Character.WHITE   : Hallway(Board_Room.BALL_ROOM, Board_Room.KITCHEN),
