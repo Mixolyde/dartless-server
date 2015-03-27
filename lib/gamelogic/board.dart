@@ -38,8 +38,28 @@ class Passage{
   final Board_Room room2;
   Passage(this.room1, this.room2);
   
-  static const Set<Passage> all = new Set(new Passage(Board_Room.STUDY, Board_Room.KITCHEN));
+  
   
 }
 
-
+abstract class Board {
+  static const List<Character> TURN_ORDER = [SCARLET, MUSTARD, WHITE, GREEN, PEACOCK, PLUM];
+  
+  static const Set<Passage> ALL_PASSAGES = new Set(
+    new Passage(Board_Room.STUDY, Board_Room.KITCHEN),
+    new Passage(Board_Room.CONSERVATORY, Board_Room.LOUNGE));
+    
+  static const Set<Passage> ALL_HALLWAYS = new Set(
+    new Hallway(Board_Room.STUDY, Board_Room.HALL),
+    new Hallway(Board_Room.HALL, Board_Room.LOUNGE));
+    
+  //starting locations
+  static const  Map[Character, Hallway] START_LOCATIONS = {
+    Character.SCARLET : Hallway(Board_Room.HALL, Board_Room.LOUNGE)),
+    Character.MUSTARD : Hallway(Board_Room.LOUNGE, Board_Room.DINING_ROOM)),
+    Character.WHITE   : Hallway(Board_Room.BALL_ROOM, Board_Room.KITCHEN)),
+    Character.GREEN   : Hallway(Board_Room.CONSERVATORY, Board_Room.BALL_ROOM)),
+    Character.PEACOCK : Hallway(Board_Room.LIBRARY, Board_Room.CONSERVATORY)),
+    Character.PLUM    : Hallway(Board_Room.STUDY, Board_Room.LIBRARY)
+  }
+}
