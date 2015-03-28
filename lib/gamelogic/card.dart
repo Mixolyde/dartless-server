@@ -1,6 +1,5 @@
 part of dartless_server;
 
-
 abstract class Card {
   final String name;
   const Card(this.name);
@@ -116,6 +115,14 @@ List<Card> gameDeck(WinningCards winners){
 
 List<Card> shuffleDeck(List<Card> cards){
   //TODO shuffle deck
+  var random = math.Random();
+  
+  List<Card> shuffled = [];
+  
+  while(cards.length > 0){
+    var pick = cards.removeAt(random.nextInt(cards.length));
+    shuffled.add(pick);
+  }
   
   return cards;
 }
