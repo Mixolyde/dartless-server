@@ -20,7 +20,7 @@ void main() {
 
 void serverTests() {
   group('GET game route tests', () {
-    test('GET game list', () {
+    test('GET empty game list', () {
       //create a mock request
       var req = new MockRequest("/games");
       //dispatch the request
@@ -28,7 +28,7 @@ void serverTests() {
         //verify the response
         expect(resp.statusCode, equals(200));
         var content = JSON.decode(resp.mockContent);
-        expect(content, containsPair("running", true));
+        expect(content, isEmpty);
       });
     });
     test('GET game 1', () {
@@ -38,8 +38,14 @@ void serverTests() {
       return app.dispatch(req).then((resp) {
         //verify the response
         expect(resp.statusCode, equals(200));
-        var content = resp.mockContent;
-        expect(content, equals("Welcome to the dartless server!"));
+        var content = JSON.decode(resp.mockContent);
+        expect(content, contains("1"));
+        print("test game content: " + content.toString());
+        
+        var gameData = content["1"];
+        expect(gameData, isNotNull);
+        expect(gameData, containsPair("winner", "mustard"));
+        
       });
     });
   });
