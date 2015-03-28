@@ -28,7 +28,7 @@ void main() {
       expect(testDeck, isNot(contains(Weapon.CANDLESTICK)));
       expect(testDeck, isNot(contains(Character.GREEN)));
     });
-    test('game deck has winning cards removed', () {
+    test('two game decks are shuffled differently', () {
       WinningCards winners = new WinningCards(Room.BALL_ROOM, 
           Weapon.CANDLESTICK, Character.GREEN);
 
