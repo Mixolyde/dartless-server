@@ -28,5 +28,23 @@ void main() {
       expect(testDeck, isNot(contains(Weapon.CANDLESTICK)));
       expect(testDeck, isNot(contains(Character.GREEN)));
     });
+    test('game deck has winning cards removed', () {
+      WinningCards winners = new WinningCards(Room.BALL_ROOM, 
+          Weapon.CANDLESTICK, Character.GREEN);
+
+      List<Card> testDeck = gameDeck(winners);
+      List<Card> testDeck2 = gameDeck(winners);
+
+      bool sameOrder = true;
+      for(var index=0; index < testDeck.length; index++){
+        if(testDeck[index] != testDeck2[index]) {
+          sameOrder = false;
+          break;
+        }
+      }
+      expect(sameOrder, isFalse);
+    });
+    
   });
 }
+

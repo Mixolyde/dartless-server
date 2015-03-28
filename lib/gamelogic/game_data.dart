@@ -5,7 +5,16 @@ class GameData {
   String winner = null;
   MoveState moveState = null;
   
+  //TODO randomize starting hand
+  final WinningCards winners = new WinningCards(
+      Room.HALL,
+      Weapon.KNIFE,
+      Character.GREEN);
+  
   GameData(this.players, this.moveState);
+  GameData.newGame(){
+    
+  }
 }
 
 class PlayerData {

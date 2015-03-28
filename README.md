@@ -27,7 +27,7 @@ Project Status
 ### Completed
 
 * Grabbed dart server template and setup in github
-* Started game logic enums for cards
+* Card and Board constant values, some logic
 
 ### Todo
 

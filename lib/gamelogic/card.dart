@@ -115,7 +115,7 @@ List<Card> gameDeck(WinningCards winners){
 
 List<Card> shuffleDeck(List<Card> cards){
   //TODO shuffle deck
-  var random = math.Random();
+  var random = new Random();
   
   List<Card> shuffled = [];
   
@@ -124,5 +124,5 @@ List<Card> shuffleDeck(List<Card> cards){
     shuffled.add(pick);
   }
   
-  return cards;
+  return shuffled;
 }
