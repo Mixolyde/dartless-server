@@ -21,8 +21,35 @@ void serverTests() {
       
       remote.then((_) => response.first).then((sendPort) {
         sendReceive(sendPort, "unit test message").then((msg) {
-          print("received: $msg");
+          print("game actor unit test received: $msg");
           expect(msg, equals("1"));
+          
+        });
+      });
+    });
+    test('send get game status message to new game data actor', () {
+      var response = new ReceivePort();
+      Future<Isolate> remote = 
+          Isolate.spawn(game_actor, response.sendPort);
+      
+      remote.then((_) => response.first).then((sendPort) {
+        sendReceive(sendPort, const GetGameData()).then((msg) {
+          print("game actor unit test received: $msg");
+          expect(msg, containsPair("winner", "mustard"));
+          
+        });
+      });
+    });
+    test('kill a new game data actor', () {
+      var response = new ReceivePort();
+      Future<Isolate> remote = 
+          Isolate.spawn(game_actor, response.sendPort);
+      
+      remote.then((_) => response.first).then((sendPort) {
+        sendReceive(sendPort, const EndGame()).then((msg) {
+          print("game actor unit test received: $msg");
+          expect(msg, contains("1"));
+          expect(msg, contains("Ending Game"));
           
         });
       });

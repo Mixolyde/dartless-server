@@ -2,7 +2,7 @@ part of dartless_server;
 
 void game_actor(SendPort initialReplyTo) {
   final GameData gData = new GameData.newGame();
-  final num gameId = 1;
+  final int gameId = 1;
   
   var port = new ReceivePort();
   initialReplyTo.send(port.sendPort);
@@ -13,7 +13,34 @@ void game_actor(SendPort initialReplyTo) {
     
     log("Game Actor $gameId received message: $data");
     
-    replyTo.send(gameId.toString());
+    if(data is GetGameData){
+      replyTo.send(gData.toJSON());
+    }
+    else if (data is NewPlayer){
+      gData.addPlayer(data.username);
+      
+    } 
+    else if (data is EndGame){
+      //TODO close ports and end isolate
+      replyTo.send([gameId.toString(), "Ending Game"]);
+      Isolate.current.kill();
+    } 
+    else {
+      replyTo.send(gameId.toString());
+    }
     
   });
+}
+
+class NewPlayer{
+  final String username;
+  const NewPlayer(this.username);
+}
+
+class GetGameData {
+  const GetGameData();
+}
+
+class EndGame {
+  const EndGame();
 }

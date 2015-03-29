@@ -8,6 +8,7 @@ import 'dart:math';
 
 //actor concurrenct parts
 part 'actors/game_actor.dart';
+part 'actors/game_supervisor.dart';
 
 //game logic parts
 part 'gamelogic/board.dart';

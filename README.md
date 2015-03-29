@@ -20,6 +20,9 @@ local machine.
 2. Go to http://localhost:8080/serverStatus to test that your server is returning data. See `server.dart`
 for other routes.
 
+##Testing##
+1. To run the unit tests right-click on the `test\all.dart` file and select Run.
+You should see console output saying All X tests passed.
 
 Project Status
 --------------
@@ -27,7 +30,10 @@ Project Status
 ### Completed
 
 * Grabbed dart server template and setup in github
-* Card and Board constant values, some logic
+* Card and Board constant values
+* Initial game data object
+* Initial game state actor
+* Initial REST routes for getting/submitting data
 
 ### Todo
 

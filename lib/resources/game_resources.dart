@@ -29,7 +29,8 @@ Map addPlayer(int gameId, String playerName) =>
     {"$gameId" : "Added $playerName to gameId: $gameId"};
     
 exampleGameJSON() => JSON.decode("""
-      {"board":{"knife":"3,3","candlestick":"4,5","pipe":"4,5"},
+      {"gameId":1,
+      "board":{"knife":"3,3","candlestick":"4,5","pipe":"4,5"},
       "move_state":{"player":"scarlett","phase":"move|suggestion|accusation|choose_card_to_show"},
       "players":[
       {"name":"Brian","character":"mustard","active":true,"cards":["knife","dining","plum"],"position":"1,1"},
