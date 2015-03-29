@@ -5,16 +5,32 @@ class GameData {
   String winner = null;
   MoveState moveState = null;
   
-  //TODO randomize starting hand
-  final WinningCards winners = new WinningCards(
+  
+  WinningCards winners = const WinningCards(
       Room.HALL,
       Weapon.KNIFE,
       Character.GREEN);
   
-  GameData(this.players, this.moveState);
   GameData.newGame(){
+    //TODO randomize winning cards
     
   }
+  
+  void addPlayer(String name){
+    //TODO add new player to game
+  }
+  
+  void startGame(){
+    //TODO check for valid number of players
+    
+    //TODO initialize winning cards
+    //TODO initialize player hands
+    //TODO initialize player locations
+    //TODO initialize initial move state
+  }
+  
+  //TODO return real game data json
+  toJSON() => exampleGameJSON();
 }
 
 class PlayerData {

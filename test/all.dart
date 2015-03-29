@@ -9,12 +9,16 @@ import 'gamelogic/board_test.dart' as board_test;
 
 import 'resources/game_resources_test.dart' as game_resources_test;
 
+import 'actors/game_actor_test.dart' as game_actor_test;
+
 void main() {
   dartless_server_test.main();
   card_test.main();
   board_test.main();
   
   game_resources_test.main();
+  
+  game_actor_test.main();
   
   print("Tests Successful");
 }

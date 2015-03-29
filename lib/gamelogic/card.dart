@@ -70,7 +70,7 @@ class WinningCards{
   final Room room; 
   final Weapon weapon; 
   final Character character;
-  WinningCards(this.room, this.weapon, this.character);
+  const WinningCards(this.room, this.weapon, this.character);
 }
 
 List<Card> newDeck(){

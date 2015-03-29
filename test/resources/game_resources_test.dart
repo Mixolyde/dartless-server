@@ -40,7 +40,7 @@ void serverTests() {
         expect(resp.statusCode, equals(200));
         var content = JSON.decode(resp.mockContent);
         expect(content, contains("1"));
-        print("test game content: " + content.toString());
+        print("test game content: $content");
         
         var gameData = content["1"];
         expect(gameData, isNotNull);
