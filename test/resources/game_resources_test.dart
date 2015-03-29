@@ -49,4 +49,33 @@ void serverTests() {
       });
     });
   });
+  group('PUT game route tests', () {
+    test('PUT game start no players', () {
+      //create a mock request
+      var req = new MockRequest("/games/1/start", method: app.PUT);
+      //dispatch the request
+      return app.dispatch(req).then((resp) {
+        //verify the response
+        expect(resp.statusCode, equals(200));
+        var content = JSON.decode(resp.mockContent);
+        expect(content, 
+            containsPair("error", 
+                         "Error starting gameId: 1. Not enough players."));
+      });
+    });
+    test('Put player Brian', () {
+      //create a mock request
+      var req = new MockRequest("/games/1/player/Brian", method: app.PUT);
+      //dispatch the request
+      return app.dispatch(req).then((resp) {
+        //verify the response
+        expect(resp.statusCode, equals(200));
+        var content = JSON.decode(resp.mockContent);
+        expect(content, contains("1"));
+        expect(content, 
+            containsPair("1", 
+                         "Added Brian to gameId: 1"));
+      });
+    });
+  });
 }

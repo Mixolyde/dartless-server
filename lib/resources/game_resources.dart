@@ -22,11 +22,11 @@ Map getGameData(int gameId) =>
 @app.Route("/games/:gameId/start", methods: const [app.PUT])
 Map startGame(int gameId) => 
     //TODO start game if it has valid players
-    {"$gameId" : "Starting gameId: $gameId"};
+    {"error" : "Error starting gameId: $gameId. Not enough players."};
     
 @app.Route("/games/:gameId/player/:playerName", methods: const [app.PUT])
 Map addPlayer(int gameId, String playerName) => 
-    {"$gameId" : "Adding $playerName to gameId:  $gameId"};
+    {"$gameId" : "Added $playerName to gameId: $gameId"};
     
 exampleGameJSON() => JSON.decode("""
       {"board":{"knife":"3,3","candlestick":"4,5","pipe":"4,5"},
