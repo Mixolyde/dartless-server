@@ -114,5 +114,6 @@ List<Card> gameDeck(WinningCards winners){
 }
 
 List<Card> shuffleDeck(List<Card> cards) {
-  return cards.shuffle(getServerRandom());
+  cards.shuffle(getServerRandom());
+  return cards;
 }
