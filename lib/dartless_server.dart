@@ -40,3 +40,14 @@ void log(String message)
   print("(${new DateTime.now().toString()}) $message");
 }
 
+static _random;
+static getServerRandom(){
+  if (_random == null){
+    var seed = new DateTime.now().millisecondsSinceEpoch;
+    _random = new Random(seed);
+  }
+  
+  return _random;
+  
+}
+
