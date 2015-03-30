@@ -46,4 +46,15 @@ void serverTests() {
       });
     });
   });
+  
+  group('utility tests', () {
+    test('get server static random', () {
+      //create a mock request
+      var rand1 = getServerRandom();
+      var rand2 = getServerRandom();
+      expect(rand1, isNotNull);
+      expect(rand2, isNotNull);
+      expect(rand1.nextInt(100000), isNot(equals(rand2.nextInt(100000))));
+    });
+  });
 }
