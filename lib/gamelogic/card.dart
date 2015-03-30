@@ -114,15 +114,10 @@ List<Card> gameDeck(WinningCards winners){
 }
 
 List<Card> shuffleDeck(List<Card> cards){
-  //TODO shuffle deck
-  var random = new Random();
+  var seed = new DateTime.now().millisecondsSinceEpoch;
+  var random = new Random(seed);
   
-  List<Card> shuffled = [];
+  cards.shuffle(random);
   
-  while(cards.length > 0){
-    var pick = cards.removeAt(random.nextInt(cards.length));
-    shuffled.add(pick);
-  }
-  
-  return shuffled;
+  return cards;
 }
