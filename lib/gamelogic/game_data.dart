@@ -1,9 +1,12 @@
 part of dartless_server;
 
+enum GameState {NEW, PLAYING, ENDED}
+
 class GameData {
   var players = new Map<Character, PlayerData>();
   String winner = null;
   MoveState moveState = null;
+  GameState state = GameState.NEW;
   
   
   WinningCards winners = const WinningCards(
@@ -13,11 +16,19 @@ class GameData {
   
   GameData.newGame(){
     //TODO randomize winning cards
-    
+    resetGame();
+  }
+  
+  void resetGame(){
+    state = GameState.NEW;
+    players = new Map<Character, PlayerData>();
+    String winner = null;
+    MoveState moveState = null;
   }
   
   void addPlayer(String name){
     //TODO add new player to game
+    
   }
   
   void startGame(){
@@ -27,6 +38,8 @@ class GameData {
     //TODO initialize player hands
     //TODO initialize player locations
     //TODO initialize initial move state
+    
+    state = GameState.PLAYING;
   }
   
   //TODO return real game data json
@@ -35,11 +48,15 @@ class GameData {
 
 class PlayerData {
   final String name;
+  final Character char;
   final Set<Card> hand;
   
   BoardLocation boardLocation;
   
-  PlayerData(this.name, this.hand, this.boardLocation);
+  PlayerData(this.name, this.char, this.hand){
+    boardLocation = Board.getStart(char);
+    
+  }
 }
 
 enum MovePhase {MOVE, SUGGESTION, ACCUSATION, CHOOSE_CARD}

@@ -23,7 +23,7 @@ void game_actor(SendPort initialReplyTo) {
     else if (data is EndGame){
       //TODO close ports and end isolate
       replyTo.send([gameId.toString(), "Ending Game"]);
-      Isolate.current.kill();
+      gData.resetGame();
     } 
     else {
       replyTo.send(gameId.toString());
