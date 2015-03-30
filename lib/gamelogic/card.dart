@@ -113,11 +113,4 @@ List<Card> gameDeck(WinningCards winners){
   return shuffleDeck(shuffleDeck(shuffleDeck(cards)));
 }
 
-List<Card> shuffleDeck(List<Card> cards){
-  var seed = new DateTime.now().millisecondsSinceEpoch;
-  var random = new Random(seed);
-  
-  cards.shuffle(random);
-  
-  return cards;
-}
+List<Card> shuffleDeck(List<Card> cards) => cards.shuffle(getServerRandom());
