@@ -1,5 +1,8 @@
 library game_data_test;
 
+import 'package:unittest/unittest.dart';
+import 'package:dartless_server/dartless_server.dart';
+
 void main() {
   group('new game data tests', () {
     test('new game data values', () {
