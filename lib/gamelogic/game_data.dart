@@ -28,6 +28,10 @@ class GameData {
   
   void addPlayer(String name){
     //TODO add new player to game
+    if (players.keys.length <= 6){
+      var charsAvailable = Character.all.toList().removeWhere((char) => players.keys.contains(char));
+      print("charsAvailable: $charsAvailable");
+    }
     
   }
   
