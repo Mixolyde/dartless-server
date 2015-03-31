@@ -7,7 +7,7 @@ void main() {
   group('new game data tests', () {
     test('new game data values', () {
       var data = new GameData.newGame();
-      expectNewGame(GameData data);
+      expectNewGame(data);
     });
   });
 
