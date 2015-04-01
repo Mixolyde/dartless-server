@@ -10,6 +10,26 @@ void main() {
       expectNewGame(data);
     });
   });
+  
+  group('add player data tests', () {
+    test('add six new players', () {
+      var data = new GameData.newGame();
+      for (var i = 1; i < 7; i++) {
+        data.addPlayer("Test Player: " + i);
+        expect(data.players.keys.length, equals(i));
+      }
+    });
+    test('ignore after six players', () {
+      var data = new GameData.newGame();
+      for (var i = 1; i < 8; i++) {
+        data.addPlayer("Test Player: " + i);
+      }
+      
+      expect(data.players.keys.length, equals(6));
+
+    });
+
+  });
 
 }
 
