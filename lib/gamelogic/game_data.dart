@@ -34,7 +34,7 @@ class GameData {
       var randomChar = charsAvailable.elementAt(
         getServerRandom().nextInt(charsAvailable.length));
       log("randomChar: $randomChar");
-      players.add(randomChar : new PlayerData(name, randomChar, null);
+      players.add(randomChar : new PlayerData(name, randomChar, null));
       log("updated players $players");
     }
     
