@@ -27,14 +27,13 @@ class GameData {
   }
   
   void addPlayer(String name){
-    //TODO add new player to game
-    if (players.keys.length <= 6){
+    if (players.keys.length < 6){
       var charsAvailable = Character.all.where((char) => !players.keys.contains(char));
       log("charsAvailable: $charsAvailable");
       var randomChar = charsAvailable.elementAt(
         getServerRandom().nextInt(charsAvailable.length));
       log("randomChar: $randomChar");
-      players.add(randomChar : new PlayerData(name, randomChar, null));
+      players[randomChar] = new PlayerData(name, randomChar, null);
       log("updated players $players");
     }
     
