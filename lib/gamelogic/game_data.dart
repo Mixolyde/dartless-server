@@ -52,6 +52,7 @@ class GameData {
       int handIndex = 0;
       var count = players.keys.length;
       var hands = new List<Set<Card>>(count);
+      
       //initialize empty hands
       for (var index = 0;index < count;index++){
         hands[index] = new Set<Card>();
@@ -61,16 +62,16 @@ class GameData {
       for (var cardInDeck in deck){
         hands[handIndex].add(cardInDeck);
         handIndex = (handIndex + 1) % count;
-        
       }
+      
       //assign hands
-      List<PlayerData> playerDatas = players.values.toList();
-      for(handIndex = 0;handIndex < count;handIndex++){
-        log("Assigning hand number: $handIndex to ${playerDatas[handIndex].name}");
+      List<Character> chars = players.keys.toList();
+      for(handIndex = 0;handIndex < count; handIndex++){
+        log("Assigning hand number: $handIndex to ${players[chars[handIndex]].name}");
         log("Cards in hand: ${hands[handIndex]}");
-        playerDatas[handIndex] = new PlayerData(
-            playerDatas[handIndex].name,
-            playerDatas[handIndex].char,
+        players[chars[handIndex]] = new PlayerData(
+            players[chars[handIndex]].name,
+            players[chars[handIndex]].char,
             hands[handIndex].toSet());
       }
       
