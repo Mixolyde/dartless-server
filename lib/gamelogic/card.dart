@@ -3,6 +3,7 @@ part of dartless_server;
 abstract class Card {
   final String name;
   const Card(this.name);
+  String toString() => "Card: $name";
 }
 
 class Character extends Card {

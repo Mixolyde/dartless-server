@@ -9,6 +9,14 @@ void main() {
       var data = new GameData.newGame();
       expectNewGame(data);
     });
+    test('new game data values after reset', () {
+      var data = new GameData.newGame();
+      data.addPlayer("name1");
+      data.addPlayer("name2");
+      data.addPlayer("name3");
+      data.resetGame();
+      expectNewGame(data);
+    });
   });
   
   group('add player data tests', () {
@@ -30,7 +38,28 @@ void main() {
     });
 
   });
+  
+  group('start game data tests', () {
+    test('two players', () {
+      var data = new GameData.newGame();
+      for (var i = 1; i < 3; i++) {
+        data.addPlayer("Test Player: $i");
+        expect(data.players.keys.length, equals(i));
+      }
+      data.startGame();
+      //TODO test data 
+    });
+    test('six players', () {
+      var data = new GameData.newGame();
+      for (var i = 1; i < 7; i++) {
+        data.addPlayer("Test Player: $i");
+        expect(data.players.keys.length, equals(i));
+      }
+      data.startGame();
+      //TODO test data 
+    });
 
+  });
 }
 
 void expectNewGame(GameData data){
