@@ -96,6 +96,7 @@ class PlayerData {
   final Set<Card> hand;
   
   BoardLocation boardLocation;
+  bool active = true;
   
   PlayerData(this.name, this.char, this.hand){
     boardLocation = Board.getStart(char);
