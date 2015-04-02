@@ -66,10 +66,12 @@ class GameData {
       //assign hands
       List<PlayerData> playerDatas = players.values.toList();
       for(handIndex = 0;handIndex < count;handIndex++){
+        log("Assigning hand number: $handIndex to ${playerDatas[handIndex].name}");
+        log("Cards in hand: ${hands[handIndex]}");
         playerDatas[handIndex] = new PlayerData(
             playerDatas[handIndex].name,
             playerDatas[handIndex].char,
-            hands[handIndex]);
+            hands[handIndex].toSet());
       }
       
       //TODO initialize initial move state

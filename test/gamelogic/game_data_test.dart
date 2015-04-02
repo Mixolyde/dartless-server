@@ -47,6 +47,7 @@ void main() {
         expect(data.players.keys.length, equals(i));
       }
       data.startGame();
+      expectAllCardsDealt(data);
       //TODO test data 
     });
     test('six players', () {
@@ -56,6 +57,7 @@ void main() {
         expect(data.players.keys.length, equals(i));
       }
       data.startGame();
+      expectAllCardsDealt(data);
       //TODO test data 
     });
 
@@ -67,4 +69,13 @@ void expectNewGame(GameData data){
   expect(data.players.keys.length, equals(0));
   expect(data.winner, isNull);
   expect(data.moveState, isNull);  
+}
+
+void expectAllCardsDealt(GameData data){
+  int cardCount = 0;
+  for(var player in data.players.values){
+    cardCount += player.hand.length;
+  }
+  
+  expect(cardCount, equals(18));
 }
