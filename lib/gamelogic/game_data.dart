@@ -86,6 +86,24 @@ class GameData {
     
   }
   
+  Map toMap() {
+    	Map gameDataMap = {};
+      try
+      {
+        gameDataMap['gameState'] = state;
+        gameDataMap['moveState'] = 
+          {
+            "player" : moveState.player,
+            "phase" : moveState.phase
+          };
+        gameDataMap['winner'] = winner;
+        gameDataMap['players'] = players;
+
+      }
+      catch(e){log("Error getting game data map: $e");}
+      return gameDataMap;
+  }
+  
   //TODO return real game data json
   toJSON() => exampleGameJSON();
 }
