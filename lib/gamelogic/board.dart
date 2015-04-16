@@ -64,7 +64,7 @@ abstract class Board {
     Board_Room.STUDY, Board_Room.KITCHEN,
     Board_Room.HALL, Board_Room.LIBRARY,
     Board_Room.BALL_ROOM, Board_Room.BILLIARD_ROOM,
-    Board_Room DINING_ROOM,
+    Board_Room.DINING_ROOM,
     Board_Room.CONSERVATORY, Board_Room.LOUNGE];
     
   static const List<Passage> ALL_PASSAGES = const [
