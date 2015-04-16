@@ -1,7 +1,22 @@
 part of dartless_server;
 
+// The board is a 5x5 grid, setup like this:
+//   1 2 3 4 5      X Direction
+// 1 R H R H R
+// 2 H   H   H
+// 3 R H R H R
+// 4 H   H   H
+// 5 R H R H R
+// Y Direction
+
+// Where Rs are rooms, and Hs are Hallways
+// A room can contain any number of players, but Hallways can only hold one
+// Board_Rooms have a name and x,y pair
+// Hallways have two Board_Rooms and an x,y pair
+// Passages connect the corner Board_Rooms, but are not locations on the board
+
 abstract class BoardLocation {
-  const BoardLocation();
+  const BoardLocation(this.x, this.y);
 }
 
 class Hallway extends BoardLocation {
@@ -45,8 +60,15 @@ abstract class Board {
       const [Character.SCARLET, Character.MUSTARD, Character.WHITE, 
         Character.GREEN, Character.PEACOCK, Character.PLUM];
   
+  static const List<Board_Room> ALL_ROOMS = const [
+    Board_Room.STUDY, Board_Room.KITCHEN,
+    Board_Room.HALL, Board_Room.LIBRARY,
+    Board_Room.BALL_ROOM, Board_Room.BILLIARD_ROOM,
+    Board_Room DINING_ROOM,
+    Board_Room.CONSERVATORY, Board_Room.LOUNGE];
+    
   static const List<Passage> ALL_PASSAGES = const [
-  const Passage(Board_Room.STUDY, Board_Room.KITCHEN),
+    const Passage(Board_Room.STUDY, Board_Room.KITCHEN),
     const Passage(Board_Room.CONSERVATORY, Board_Room.LOUNGE)];
     
   static const List<Passage> ALL_HALLWAYS = const [
