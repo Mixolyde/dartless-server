@@ -16,7 +16,7 @@ part of dartless_server;
 // Passages connect the corner Board_Rooms, but are not locations on the board
 
 abstract class BoardLocation {
-  const BoardLocation(this.x, this.y);
+  const BoardLocation();
 }
 
 class Hallway extends BoardLocation {
