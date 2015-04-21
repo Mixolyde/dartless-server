@@ -14,8 +14,8 @@ void main() {
       expect(Board.ALL_HALLWAYS, contains(const Hallway(4, 1)));
     });
     test('contains rooms', () {
-      expect(Board.ALL_ROOMS, Board_Room.HALL);
-      expect(Board.ALL_ROOMS, Board_Room.STUDY);
+      expect(Board.ALL_ROOMS, contains(Board_Room.HALL));
+      expect(Board.ALL_ROOMS, contains(Board_Room.STUDY));
     });
     test('Scarlet starts in the hall/lounge hallway', () {
       expect(Board.getStart(Character.SCARLET),
