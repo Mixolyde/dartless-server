@@ -23,6 +23,8 @@ abstract class BoardLocation {
 
 class Hallway extends BoardLocation {
   const Hallway(x, y) : super(x, y);
+  
+  String toString() => "Hallway at ($x, $y)";
 }
 
 class Board_Room extends BoardLocation {
