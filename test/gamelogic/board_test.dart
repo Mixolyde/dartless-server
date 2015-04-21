@@ -10,12 +10,12 @@ void main() {
       expect(Board.ALL_PASSAGES, contains(const Passage(Board_Room.CONSERVATORY, Board_Room.LOUNGE)));
     });
     test('contains hallways', () {
-      expect(Board.ALL_HALLWAYS, contains(const Hallway(Board_Room.STUDY, Board_Room.HALL)));
-      expect(Board.ALL_HALLWAYS, contains(const Hallway(Board_Room.HALL, Board_Room.LOUNGE)));
+      expect(Board.ALL_HALLWAYS, contains(const Hallway(2, 1)));
+      expect(Board.ALL_HALLWAYS, contains(const Hallway(4, 1)));
     });
     test('Scarlet starts in the hall/lounge hallway', () {
       expect(Board.getStart(Character.SCARLET),
-          equals(const Hallway(Board_Room.HALL, Board_Room.LOUNGE)));
+          equals(const Hallway(1, 1)));
     });
   });
 }
