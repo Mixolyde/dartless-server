@@ -97,7 +97,21 @@ class GameData {
             "phase" : moveState.phase
           };
         gameDataMap['winner'] = winner;
-        gameDataMap['players'] = players;
+        
+        List<Map> playerData = [];
+        for(PlayerData pd in players.values){
+          playerData.add(
+            {
+              "name" : pd.name,
+              "character" : pd.char,
+              "active" : pd.isActive,
+              "moved" : pd.hasMoved
+              "positionX" : pd.boardLocation.x,
+              "positionY" : pd.boardLocation.y,
+              "hand" : pd.hand
+            });
+        }
+        gameDataMap['players'] = playerData;
 
       }
       catch(e){log("Error getting game data map: $e");}
@@ -114,7 +128,7 @@ class PlayerData {
   final Set<Card> hand;
   
   BoardLocation boardLocation;
-  bool active = true;
+  bool isActive = true;
   bool hasMoved = false;
   
   PlayerData(this.name, this.char, this.hand){
