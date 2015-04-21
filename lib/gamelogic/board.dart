@@ -31,23 +31,23 @@ class Board_Room extends BoardLocation {
   final Room room;
   const Board_Room._(x, y, this.room) : super(x, y);
   static const Board_Room HALL =
-    const Board_Room._(1, 1, Room.HALL);
+    const Board_Room._(3, 1, Room.HALL);
   static const Board_Room STUDY =
     const Board_Room._(1, 1, Room.STUDY);
   static const Board_Room LIBRARY =
-    const Board_Room._(1, 1, Room.LIBRARY);
+    const Board_Room._(1, 3, Room.LIBRARY);
   static const Board_Room CONSERVATORY =
-    const Board_Room._(1, 1, Room.CONSERVATORY);
+    const Board_Room._(1, 5, Room.CONSERVATORY);
   static const Board_Room BALL_ROOM =
-    const Board_Room._(1, 1, Room.BALL_ROOM);
+    const Board_Room._(3, 5, Room.BALL_ROOM);
   static const Board_Room BILLIARD_ROOM =
-    const Board_Room._(1, 1, Room.BILLIARD_ROOM);
+    const Board_Room._(3, 3, Room.BILLIARD_ROOM);
   static const Board_Room LOUNGE =
-    const Board_Room._(1, 1, Room.LOUNGE);
+    const Board_Room._(5, 1, Room.LOUNGE);
   static const Board_Room DINING_ROOM =
-    const Board_Room._(1, 1, Room.DINING_ROOM);
+    const Board_Room._(5, 3, Room.DINING_ROOM);
   static const Board_Room KITCHEN =
-    const Board_Room._(1, 1, Room.KITCHEN);    
+    const Board_Room._(5, 5, Room.KITCHEN);    
 }
 
 class Passage{
@@ -87,12 +87,12 @@ abstract class Board {
     
   //starting locations
   static const Map<Character, Hallway> START_LOCATIONS = const {
-    Character.SCARLET : const Hallway(2, 1),
-    Character.MUSTARD : const Hallway(2, 1),
-    Character.WHITE   : const Hallway(2, 1),
-    Character.GREEN   : const Hallway(2, 1),
-    Character.PEACOCK : const Hallway(2, 1),
-    Character.PLUM    : const Hallway(2, 1)
+    Character.SCARLET : const Hallway(4, 1),
+    Character.MUSTARD : const Hallway(5, 2),
+    Character.WHITE   : const Hallway(4, 5),
+    Character.GREEN   : const Hallway(2, 5),
+    Character.PEACOCK : const Hallway(1, 4),
+    Character.PLUM    : const Hallway(1, 2)
   };
   
   static Hallway getStart(Character char) => START_LOCATIONS[char];
