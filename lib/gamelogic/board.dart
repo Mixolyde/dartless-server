@@ -22,9 +22,7 @@ abstract class BoardLocation {
 }
 
 class Hallway extends BoardLocation {
-  final Board_Room room1;
-  final Board_Room room2;
-  const Hallway(x, y, this.room1, this.room2) : super(x, y);
+  const Hallway(x, y) : super(x, y);
 }
 
 class Board_Room extends BoardLocation {
@@ -74,17 +72,25 @@ abstract class Board {
     const Passage(Board_Room.CONSERVATORY, Board_Room.LOUNGE)];
     
   static const List<Hallway> ALL_HALLWAYS = const [
-    const Hallway(2, 1, Board_Room.STUDY, Board_Room.HALL),
-    const Hallway(4, 1, Board_Room.HALL, Board_Room.LOUNGE)];
+    const Hallway(2, 1),
+    const Hallway(4, 1),
+    const Hallway(1, 2),
+    const Hallway(3, 2),
+    const Hallway(5, 2),
+    const Hallway(2, 3),
+    const Hallway(4, 3),
+    const Hallway(1, 4),
+    const Hallway(3, 4),
+    const Hallway(5, 4)];
     
   //starting locations
   static const Map<Character, Hallway> START_LOCATIONS = const {
-    Character.SCARLET : ALL_HALLWAYS[2],
-    Character.MUSTARD : const Hallway(2, 1, Board_Room.LOUNGE, Board_Room.DINING_ROOM),
-    Character.WHITE   : const Hallway(2, 1, Board_Room.BALL_ROOM, Board_Room.KITCHEN),
-    Character.GREEN   : const Hallway(2, 1, Board_Room.CONSERVATORY, Board_Room.BALL_ROOM),
-    Character.PEACOCK : const Hallway(2, 1, Board_Room.LIBRARY, Board_Room.CONSERVATORY),
-    Character.PLUM    : const Hallway(2, 1, Board_Room.STUDY, Board_Room.LIBRARY)
+    Character.SCARLET : ALL_HALLWAYS[1],
+    Character.MUSTARD : ALL_HALLWAYS[2],
+    Character.WHITE   : ALL_HALLWAYS[3],
+    Character.GREEN   : ALL_HALLWAYS[4],
+    Character.PEACOCK : ALL_HALLWAYS[5],
+    Character.PLUM    : ALL_HALLWAYS[6]
   };
   
   static Hallway getStart(Character char) => START_LOCATIONS[char];
