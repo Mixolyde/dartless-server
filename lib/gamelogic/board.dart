@@ -2,11 +2,11 @@ part of dartless_server;
 
 // The board is a 5x5 grid, setup like this:
 //   1 2 3 4 5      X Direction
-// 1 R H R H R
+// 1 R H R H R      Study, Hall, Lounge
 // 2 H   H   H
-// 3 R H R H R
+// 3 R H R H R      Library, Billiard, Dining
 // 4 H   H   H
-// 5 R H R H R
+// 5 R H R H R      Consveratory, Ballroom, Kitchen
 // Y Direction
 
 // Where Rs are rooms, and Hs are Hallways
