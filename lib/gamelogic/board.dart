@@ -83,7 +83,9 @@ abstract class Board {
     const Hallway(4, 3),
     const Hallway(1, 4),
     const Hallway(3, 4),
-    const Hallway(5, 4)];
+    const Hallway(5, 4),
+    const Hallway(2, 5),
+    const Hallway(4, 5)];
     
   //starting locations
   static const Map<Character, Hallway> START_LOCATIONS = const {
