@@ -24,12 +24,12 @@ abstract class BoardLocation {
 class Hallway extends BoardLocation {
   final Board_Room room1;
   final Board_Room room2;
-  const Hallway(x, y, this.room1, this.room2):super.(x, y);
+  const Hallway(x, y, this.room1, this.room2) : super(x, y);
 }
 
 class Board_Room extends BoardLocation {
   final Room room;
-  const Board_Room._(x, y, this.room):super.(x, y);
+  const Board_Room._(x, y, this.room) : super(x, y);
   static const Board_Room HALL =
     const Board_Room._(1, 1, Room.HALL);
   static const Board_Room STUDY =
