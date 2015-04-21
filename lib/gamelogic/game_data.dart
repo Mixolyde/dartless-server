@@ -115,6 +115,7 @@ class PlayerData {
   
   BoardLocation boardLocation;
   bool active = true;
+  bool hasMoved = false;
   
   PlayerData(this.name, this.char, this.hand){
     boardLocation = Board.getStart(char);
