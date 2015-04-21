@@ -15,7 +15,7 @@ void main() {
     });
     test('Scarlet starts in the hall/lounge hallway', () {
       expect(Board.getStart(Character.SCARLET),
-          equals(const Hallway(4, 1)));
+          equals(const Hallway(2, 1)));
     });
   });
 }
