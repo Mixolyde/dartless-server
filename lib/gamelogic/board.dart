@@ -85,12 +85,12 @@ abstract class Board {
     
   //starting locations
   static const Map<Character, Hallway> START_LOCATIONS = const {
-    Character.SCARLET : ALL_HALLWAYS[1],
-    Character.MUSTARD : ALL_HALLWAYS[2],
-    Character.WHITE   : ALL_HALLWAYS[3],
-    Character.GREEN   : ALL_HALLWAYS[4],
-    Character.PEACOCK : ALL_HALLWAYS[5],
-    Character.PLUM    : ALL_HALLWAYS[6]
+    Character.SCARLET : const Hallway(2, 1),
+    Character.MUSTARD : const Hallway(2, 1),
+    Character.WHITE   : const Hallway(2, 1),
+    Character.GREEN   : const Hallway(2, 1),
+    Character.PEACOCK : const Hallway(2, 1),
+    Character.PLUM    : const Hallway(2, 1)
   };
   
   static Hallway getStart(Character char) => START_LOCATIONS[char];
