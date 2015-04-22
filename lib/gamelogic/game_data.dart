@@ -105,8 +105,8 @@ class GameData {
               "name" : pd.name,
               "character" : pd.char,
               "active" : pd.isActive,
-              "moved" : pd.hasMoved
-              "positionX" : "${pd.boardLocation.x},${pd.boardLocation.y}",
+              "moved" : pd.hasMoved,
+              "position" : "${pd.boardLocation.x},${pd.boardLocation.y}",
               "hand" : pd.hand
             });
         }
