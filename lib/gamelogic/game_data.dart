@@ -91,11 +91,15 @@ class GameData {
       try
       {
         gameDataMap['gameState'] = state;
-        gameDataMap['moveState'] = 
-          {
-            "player" : moveState.player,
-            "phase" : moveState.phase
-          };
+        if (moveState == null) {
+          gameDataMap['moveState'] = "";
+        } else {
+          gameDataMap['moveState'] = 
+            {
+              "player" : moveState.player,
+              "phase" : moveState.phase
+            };
+        }
         gameDataMap['winner'] = winner;
         
         List<Map> playerData = [];
