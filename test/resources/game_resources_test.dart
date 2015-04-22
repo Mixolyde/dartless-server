@@ -37,6 +37,7 @@ void serverTests() {
       //dispatch the request
       return app.dispatch(req).then((resp) {
         //verify the response
+        print(resp);
         expect(resp.statusCode, equals(200));
         var content = JSON.decode(resp.mockContent);
         expect(content, contains("1"));
