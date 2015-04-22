@@ -15,9 +15,12 @@ Map createGame() {
 }
         
 @app.Route("/games/:gameId")
-Map getGameData(int gameId) => 
+Map getGameData(int gameId) {
     //TODO pull data for game id from global
-    {"$gameId" : GameSupervisor.getGame().toMap()};
+    Map gameDataMap = GameSupervisor.getGame().toMap();
+    log("Returning game data map: $gameDataMap");
+    return {"$gameId" : gameDataMap};
+}
 
 @app.Route("/games/:gameId/start", methods: const [app.PUT])
 Map startGame(int gameId) => 
