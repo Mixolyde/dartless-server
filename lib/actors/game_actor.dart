@@ -14,7 +14,7 @@ void game_actor(SendPort initialReplyTo) {
     log("Game Actor $gameId received message: $data");
     
     if(data is GetGameData){
-      replyTo.send(gData.toJSON());
+      replyTo.send(gData.toMap());
     }
     else if (data is NewPlayer){
       gData.addPlayer(data.username);

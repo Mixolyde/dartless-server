@@ -21,8 +21,8 @@ class GameData {
   void resetGame(){
     state = GameState.NEW;
     players = new Map<Character, PlayerData>();
-    String winner = null;
-    MoveState moveState = null;
+    winner = null;
+    moveState = null;
   }
   
   void addPlayer(String name){
@@ -111,7 +111,7 @@ class GameData {
               "active" : pd.isActive,
               "moved" : pd.hasMoved,
               "position" : "${pd.boardLocation.x},${pd.boardLocation.y}",
-              "hand" : pd.hand
+              "hand" : pd.hand.toString()
             });
         }
         gameDataMap['players'] = playerData;
@@ -120,9 +120,6 @@ class GameData {
       catch(e){log("Error getting game data map: $e");}
       return gameDataMap;
   }
-  
-  //TODO return real game data json
-  toJSON() => exampleGameJSON();
 }
 
 class PlayerData {

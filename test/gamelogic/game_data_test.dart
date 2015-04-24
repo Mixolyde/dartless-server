@@ -14,7 +14,10 @@ void main() {
       data.addPlayer("name1");
       data.addPlayer("name2");
       data.addPlayer("name3");
+      data.startGame();
+      
       data.resetGame();
+      
       expectNewGame(data);
     });
   });
