@@ -31,7 +31,7 @@ void serverTests() {
         expect(content, isEmpty);
       });
     });
-    test('GET game 1', () {
+    test('GET new game 1', () {
       //create a mock request
       var req = new MockRequest("/games/1");
       //dispatch the request
@@ -45,7 +45,10 @@ void serverTests() {
         
         var gameData = content["1"];
         expect(gameData, isNotNull);
-        expect(gameData, containsPair("winner", "mustard"));
+        expect(gameData, containsPair("winner", null));
+        expect(gameData, containsPair("moveState", null));
+        expect(gameData, containsPair("gameState", "NEW"));
+        expect(gameData["players"], isEmpty);
         
       });
     });

@@ -90,13 +90,13 @@ class GameData {
     	Map gameDataMap = {};
       try
       {
-        gameDataMap['gameState'] = state;
+        gameDataMap['gameState'] = state.toString().split(".")[1];
         if (moveState == null) {
-          gameDataMap['moveState'] = "";
+          gameDataMap['moveState'] = null;
         } else {
           gameDataMap['moveState'] = 
             {
-              "player" : moveState.player,
+              "player" : moveState.character,
               "phase" : moveState.phase
             };
         }

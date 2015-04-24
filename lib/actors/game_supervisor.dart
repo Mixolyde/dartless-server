@@ -21,7 +21,7 @@ class GameSupervisor{
       });
       
     }
-    log("Returning game actor control port $gamePort");
+    log("Returning game actor control port $_gamePort");
     return _gamePort;
 
   }
